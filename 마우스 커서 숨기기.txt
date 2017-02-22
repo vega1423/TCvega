@@ -1,0 +1,4 @@
+Cursor.lockState = CursorLockMode.Locked;
+Cursor.visible = false;
+
+스타트문, 업뎃문 혹은 마우스클릭문(안하면 클릭시 커서 보임)에 기입
