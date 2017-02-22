@@ -6,23 +6,24 @@ public class camera : MonoBehaviour {
 
     public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
     public RotationAxes axes = RotationAxes.MouseXAndY;
-    public float sensitivityX = 15F;
-    public float sensitivityY = 15F;
-    public float minimumX = -360F;
-    public float maximumX = 360F;
-    public float minimumY = -60F;
-    public float maximumY = 60F;
-    float rotationY = 0F;
+    public float sensitivityX = 15.0f;
+    public float sensitivityY = 15.0f;
+    public float minimumX = -360.0f;
+    public float maximumX = 360.0f;
+    public float minimumY = -60.0f;
+    public float maximumY = 60.0f;
+    public float rotationX = 0.0f;
+    public float rotationY = 0.0f;
     void Update()
     {
         if (axes == RotationAxes.MouseXAndY)
         {
-            float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
+            rotationY = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
 
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+            rotationX += Input.GetAxis("Mouse Y") * sensitivityX;
+            rotationX = Mathf.Clamp(rotationX, minimumY, maximumY);
 
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            transform.localEulerAngles = new Vector3(-rotationX, rotationY, 0);
         }
         else if (axes == RotationAxes.MouseX)
         {
@@ -30,18 +31,17 @@ public class camera : MonoBehaviour {
         }
         else
         {
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+            rotationX += Input.GetAxis("Mouse Y") * sensitivityY;
+            rotationX = Mathf.Clamp(rotationX, minimumY, maximumY);
 
-            transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+            transform.localEulerAngles = new Vector3(-rotationX, transform.localEulerAngles.y, 0);
         }
     }
 
     void Start()
     {
         // Make the rigid body not change rotation
-        if (GetComponent<Rigidbody>())
-            GetComponent<Rigidbody>().freezeRotation = true;
+        //if (GetComponent<Rigidbody>()) GetComponent<Rigidbody>().freezeRotation = true;
     }
 
 }

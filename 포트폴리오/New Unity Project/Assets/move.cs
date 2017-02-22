@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class move : MonoBehaviour {
     public float _speed;
-    public Vector3 Y_Vec;
-    public float Y_rot;
+    public float Y_ros = 0.0f;
     public Camera _cam;
+
 
     // Use this for initialization
     void Start () {
-        Y_Vec = new Vector3(0,_cam.transform.eulerAngles.y, 0);
+        //Y_Vec = new Vector3(0,_cam.transform.eulerAngles.y, 0);
+        //if (GetComponent<Rigidbody>()) GetComponent<Rigidbody>().freezeRotation = true;
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        //Y_ros = _cam.transform.eulerAngles.y;
         Move();
-        Y_Vec = new Vector3(0, _cam.transform.eulerAngles.y, 0);
-        Y_rot = Y_Vec.y;
-        transform.eulerAngles = new Vector3(0, Y_rot, 0);
+        //Y_Vec = new Vector3(0, _cam.transform.eulerAngles.y, 0);
+        //Y_rot = Y_Vec.y;
+       
     }
 
     void Move()

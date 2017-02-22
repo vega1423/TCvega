@@ -73,7 +73,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -83,12 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\_Camera_move.cs" />
     <Compile Include="Assets\camera.cs" />
-=======
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\NewBehaviourScript.cs" />
->>>>>>> cb9b2cbd8da383cee33649664903df69999a8cca
     <Compile Include="Assets\move.cs" />
   </ItemGroup>
   <ItemGroup>
