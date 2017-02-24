@@ -81,9 +81,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NewBehaviourScript.cs" />
-    <Compile Include="Assets\_Camera_move.cs" />
-    <Compile Include="Assets\target.cs" />
+    <Compile Include="Assets\script\_Camera_move.cs" />
+    <Compile Include="Assets\script\target.cs" />
+    <Compile Include="Assets\script\zombie_move.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Free Guns Pack\READ_ME.txt" />
