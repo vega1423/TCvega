@@ -79,6 +79,7 @@ public class _Camera_move : MonoBehaviour {
 			//float d = Input.GetAxis("Horizontal");
 			transform.Translate(Vector3.right * _speed * Time.deltaTime);
 		}
+        
 	}
 
 }
