@@ -7,7 +7,7 @@ public class _ShotGun : MonoBehaviour {
     //CharacterController pcController;
     Animator animator;
 
-    public AudioClip sndCilp;
+    public AudioClip soundCilp;
 
     public GameObject _gun_fire;
     public float _shot_count;
@@ -32,7 +32,7 @@ public class _ShotGun : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !_shooting)
         {
-            AudioSource.PlayClipAtPoint(sndCilp, transform.position);
+            AudioSource.PlayClipAtPoint(soundCilp, transform.position);
             _shooting = true;
         }
 

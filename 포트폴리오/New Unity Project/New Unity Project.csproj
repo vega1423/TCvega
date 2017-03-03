@@ -87,9 +87,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\script\Camera_ray.cs" />
     <Compile Include="Assets\script\_Camera_move.cs" />
     <Compile Include="Assets\script\_ShotGun.cs" />
     <Compile Include="Assets\script\target.cs" />
+    <Compile Include="Assets\script\target_find.cs" />
     <Compile Include="Assets\script\zombie_move.cs" />
   </ItemGroup>
   <ItemGroup>

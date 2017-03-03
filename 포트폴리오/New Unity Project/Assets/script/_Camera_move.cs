@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class _Camera_move : MonoBehaviour {
-
+    
     public Camera cam;
-
 
 
 	public float _speed;
@@ -19,23 +18,22 @@ public class _Camera_move : MonoBehaviour {
     public float rotationX = 0.0f;
     public float rotationY = 0.0f;
 
+
+   
     // Use this for initialization
     void Start () {
-		//Cursor.lockState = CursorLockMode.Locked;
-		//Cursor.visible = false;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-			//Cursor.lockState = CursorLockMode.Locked;
-			//Cursor.visible = false;
-
 		transform.eulerAngles = new Vector3(0, rotationX,0);
 
 		_camera_view ();
 		Move ();
-	}
+        
+
+    }
 
 
 	void _camera_view()
@@ -81,5 +79,8 @@ public class _Camera_move : MonoBehaviour {
 		}
         
 	}
+
+
+    
 
 }
