@@ -14,10 +14,8 @@ public class _ShotGun : MonoBehaviour {
     public bool _shooting;
     public float _shot_count_max;
     float _shot_count_min = 0.0f;
-   
+    public int gun_count; 
 
-
-    
     // Use this for initialization
     void Start () {
         //pcController = GetComponent<CharacterController>();
@@ -26,14 +24,17 @@ public class _ShotGun : MonoBehaviour {
         _shooting = false;
         _shot_count = 0.0f;
         _gun_fire.SetActive(false);
+        _shot_count_max = 10.0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !_shooting)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !_shooting && gun_count!=0)
         {
             AudioSource.PlayClipAtPoint(soundCilp, transform.position);
             _shooting = true;
+            transform.parent.GetComponent<Camera_ray>()._shooting2 = _shooting;
+            gun_count -= 1;
         }
 
         if (_shooting)
@@ -42,9 +43,13 @@ public class _ShotGun : MonoBehaviour {
             _shot_count += 0.1f;
             
             _gun_fire.SetActive(true);
+           
 
         }
-
+        if (_shot_count >= 0.3f)
+        {
+            transform.parent.GetComponent<Camera_ray>()._shooting2 = false;
+        }
         if (_shot_count >= _shot_count_max/2.0f)
         {
             _gun_fire.SetActive(false);
@@ -57,11 +62,6 @@ public class _ShotGun : MonoBehaviour {
             _shot_count = _shot_count_min;
             
         }
-
-        
-
-        
-
 
         animator.SetBool("shot", _shooting);
     }

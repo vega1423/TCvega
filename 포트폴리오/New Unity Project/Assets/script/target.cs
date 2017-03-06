@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class target : MonoBehaviour {
-    public AudioClip sound_eat;
+    //public AudioClip sound_eat;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +20,7 @@ public class target : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            AudioSource.PlayClipAtPoint(sound_eat, transform.position);
+            //AudioSource.PlayClipAtPoint(sound_eat, transform.position);
 
         }
     }
