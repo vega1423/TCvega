@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//게임 클리어
-public class target_find : MonoBehaviour {
+
+public class zombie_hand : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,12 +11,14 @@ public class target_find : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!transform.Find("target"))
-        {
-            Debug.Log("클리어");
-            Time.timeScale = 0;
-            Destroy(gameObject);
-            
-        }
+		
 	}
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            Time.timeScale = 0;
+        }
+    }
 }
