@@ -18,7 +18,7 @@ public class zombie_hand : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player")
         {
-            Time.timeScale = 0;
+			coll.GetComponent<_Camera_move> ().player_die = true;
         }
     }
 }

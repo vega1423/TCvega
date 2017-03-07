@@ -2,7 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\zombie_move.cs">
     <Files>
-      <File FileName="Assets\script\zombie_move.cs" Line="23" Column="3" />
+      <File FileName="Assets\script\zombie_move.cs" Line="60" Column="6" />
+      <File FileName="Assets\script\target.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\_ShotGun.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Camera_ray.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\zombie_hand.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\target_find.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\_Camera_move.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\zombie_sound.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\zombie_point.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\start_UI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

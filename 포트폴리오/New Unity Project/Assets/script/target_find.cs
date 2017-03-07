@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 //게임 클리어
 public class target_find : MonoBehaviour {
-
+	public GameObject _clear;
+	public GameObject _UI;
+	public float a = 0.0f;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,10 +15,19 @@ public class target_find : MonoBehaviour {
 	void Update () {
         if (!transform.Find("target"))
         {
-            Debug.Log("클리어");
+            //Debug.Log("클리어");
+
+			_clear.SetActive (true);
+			_UI.SetActive (false);
+
             Time.timeScale = 0;
-            Destroy(gameObject);
-            
+            //Destroy(gameObject);
+
+			a += 0.1f;
+			if (a >= 6.0f) {
+				_clear.SetActive (false);
+				Application.LoadLevel ("zzzzzz");
+			}
         }
 	}
 }

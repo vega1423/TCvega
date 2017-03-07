@@ -6,7 +6,6 @@ public class _Camera_move : MonoBehaviour {
     
     public Camera cam;
 
-
 	public float _speed;
 
     public float sensitivityX = 15.0f;
@@ -18,11 +17,14 @@ public class _Camera_move : MonoBehaviour {
     public float rotationX = 0.0f;
     public float rotationY = 0.0f;
 
+	public bool player_die;
 
-   
+	public GameObject UI_cam;
+	public GameObject Satrt_UI;
+	float a = 0;
     // Use this for initialization
     void Start () {
-		
+		player_die = false;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +33,26 @@ public class _Camera_move : MonoBehaviour {
 
 		_camera_view ();
 		Move ();
-        
+		if (player_die == true) 
+		{
+			a += Time.deltaTime;
+			if (a >= 1.0f) {
+				rotationY += 5.0f;
+				UI_cam.SetActive (false);
+				Satrt_UI.SetActive (false);
+				gameObject.SetActive (false);
+				Application.LoadLevel ("zzzzzz");
+			}
+
+		}
+
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+
+			UI_cam.SetActive (false);
+			Satrt_UI.SetActive (true);
+			gameObject.SetActive (false);
+			Cursor.visible = true; 
+		}
 
     }
 
@@ -52,6 +73,8 @@ public class _Camera_move : MonoBehaviour {
 			rotationX = 0.0f;
 		}
 		cam.transform.eulerAngles = new Vector3(-rotationY, rotationX,0);
+
+
 	}
 
 	void Move()
