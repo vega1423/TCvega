@@ -22,7 +22,7 @@ public class zombie_point : MonoBehaviour {
 		_summon1_count = 0;
 		_summon2_count = 0;
 		StartCoroutine ("zombie_summon",1.0f);
-		StartCoroutine ("zombie_summon2", 20.0f);
+		StartCoroutine ("zombie_summon2", 30.0f);
 	}	
 	
 	// Update is called once per frame
@@ -30,13 +30,13 @@ public class zombie_point : MonoBehaviour {
 	void Update()
 	{
 		_time += Time.deltaTime;
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+		if (Input.GetKeyDown (KeyCode.Alpha9)) {
 
 			--_summon1_count;
 			_summon1 = false;
 			StartCoroutine ("zombie_summon",1);
 		}
-		if (Input.GetKeyDown (KeyCode.Alpha2)) {
+		if (Input.GetKeyDown (KeyCode.Alpha0)) {
 
 			--_summon2_count;
 			_summon2 = false;

@@ -57,7 +57,7 @@ public class zombie_move : MonoBehaviour {
 
 
 		if (coll.gameObject.tag == "Fire") {
-			//Navi.speed = 0;
+			Navi.speed = 0;
 			Navi.Stop(true);
 			_die = true;
 			animator.SetBool("die",_die);

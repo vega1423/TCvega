@@ -35,10 +35,11 @@ public class _Camera_move : MonoBehaviour {
 		Move ();
 		if (player_die == true) 
 		{
-			a += Time.deltaTime;
+            rotationY += 5.0f;
+            a += Time.deltaTime;
 			if (a >= 1.0f) {
-				rotationY += 5.0f;
-				UI_cam.SetActive (false);
+                Cursor.visible = true;
+                UI_cam.SetActive (false);
 				Satrt_UI.SetActive (false);
 				gameObject.SetActive (false);
 				Application.LoadLevel ("zzzzzz");
@@ -47,8 +48,8 @@ public class _Camera_move : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-
-			UI_cam.SetActive (false);
+            Time.timeScale = 0;
+            UI_cam.SetActive (false);
 			Satrt_UI.SetActive (true);
 			gameObject.SetActive (false);
 			Cursor.visible = true; 

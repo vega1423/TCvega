@@ -14,7 +14,10 @@ public class target : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            Destroy(gameObject);
+        }
 	}
 
     void OnTriggerEnter(Collider coll)
