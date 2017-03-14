@@ -35,10 +35,7 @@ public class Camera_ray : MonoBehaviour {
 
         if (Physics.Raycast(ray, out rayHit, ray_max) && !(rayHit.transform.tag =="target"))
         {
-            //Transform objectHit = hit.transform;
-
-            //Debug.DrawLine(ray.origin, rayHit.point, Color.green);
-            //Debug.Log("체크->" + rayHit.transform.name);
+           
             if (_shooting2)
             {
                 Instantiate(_fire, new Vector3(rayHit.point.x, rayHit.point.y, rayHit.point.z), new Quaternion(0, 0, 0, 0));

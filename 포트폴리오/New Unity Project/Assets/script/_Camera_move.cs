@@ -19,9 +19,12 @@ public class _Camera_move : MonoBehaviour {
 
 	public bool player_die;
 
+    public float zom_hand_rotation;
+
 	public GameObject UI_cam;
 	public GameObject Satrt_UI;
-	float a = 0;
+    public GameObject Die_UI;
+    float a = 0;
     // Use this for initialization
     void Start () {
 		player_die = false;
@@ -35,14 +38,15 @@ public class _Camera_move : MonoBehaviour {
 		Move ();
 		if (player_die == true) 
 		{
-            rotationY += 5.0f;
+            rotationY += 3.0f;
+            transform.eulerAngles = new Vector3(0, -zom_hand_rotation, 0);
             a += Time.deltaTime;
 			if (a >= 1.0f) {
                 Cursor.visible = true;
+                Die_UI.SetActive(true);
                 UI_cam.SetActive (false);
 				Satrt_UI.SetActive (false);
 				gameObject.SetActive (false);
-				Application.LoadLevel ("zzzzzz");
 			}
 
 		}
@@ -82,23 +86,23 @@ public class _Camera_move : MonoBehaviour {
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			//float w = Input.GetAxis("Vertical");
+			
 			transform.Translate(Vector3.forward * _speed * Time.deltaTime);
 		}
 
 		if (Input.GetKey(KeyCode.S))
 		{
-			//float s = Input.GetAxis("Vertical");
+			
 			transform.Translate(Vector3.back * _speed * Time.deltaTime);
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
-			//float a = Input.GetAxis("Horizontal");
+			
 			transform.Translate(Vector3.left * _speed * Time.deltaTime);
 		}
 		if (Input.GetKey(KeyCode.D))
 		{
-			//float d = Input.GetAxis("Horizontal");
+			
 			transform.Translate(Vector3.right * _speed * Time.deltaTime);
 		}
         

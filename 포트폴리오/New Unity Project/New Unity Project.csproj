@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\Camera_ray.cs" />
+    <Compile Include="Assets\script\Die_UI.cs" />
     <Compile Include="Assets\script\_Camera_move.cs" />
     <Compile Include="Assets\script\_ShotGun.cs" />
     <Compile Include="Assets\script\fire_Destroy.cs" />

@@ -19,6 +19,7 @@ public class zombie_hand : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
 			coll.GetComponent<_Camera_move> ().player_die = true;
+            coll.GetComponent<_Camera_move>().zom_hand_rotation = transform.rotation.y;
         }
     }
 }
